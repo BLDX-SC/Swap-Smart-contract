@@ -1,0 +1,492 @@
+# Palkeoramix decompiler. 
+
+const unknowneb101927 = eth.balance(this.address)
+
+def storage:
+  owner is addr at storage 0
+  stor1 is mapping of uint8 at storage 1
+  stor2 is uint256 at storage 2
+  open is uint8 at storage 3
+  feeAddr is addr at storage 3 offset 8
+  unknown7c87d888 is uint256 at storage 4
+  unknown7787a4e3 is uint256 at storage 5
+  changeAmount is uint256 at storage 6
+  unknown1950833a is uint256 at storage 7
+  tokenAddr is addr at storage 8
+  stor9 is uint32 at storage 9
+  unknown1554e1ceAddress is addr at storage 9
+  stor10 is uint32 at storage 10
+  unknownaf589da3Address is addr at storage 10
+  unknowndf1e4fe2Address is addr at storage 11
+  unknown4754d7d3 is uint256 at storage 12
+  unknowne484bc90 is uint256 at storage 13
+  fee is uint32 at storage 14
+  priceAddress is addr at storage 14 offset 24
+
+def getprice(): # not payable
+  return priceAddress
+
+def unknown1554e1ce(): # not payable
+  return addr(unknown1554e1ceAddress)
+
+def unknown1950833a(): # not payable
+  return unknown1950833a
+
+def feeAddr(): # not payable
+  return feeAddr
+
+def unknown4754d7d3(): # not payable
+  return unknown4754d7d3
+
+def tokenAddr(): # not payable
+  return tokenAddr
+
+def unknown7787a4e3(): # not payable
+  return unknown7787a4e3
+
+def unknown7c87d888(): # not payable
+  return unknown7c87d888
+
+def owner(): # not payable
+  return owner
+
+def hasAccess(address _who): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 32
+  require _who == _who
+  return bool(stor1[addr(_who)])
+
+def changeAmount(): # not payable
+  return changeAmount
+
+def unknownaf589da3(): # not payable
+  return addr(unknownaf589da3Address)
+
+def fee(): # not payable
+  return fee
+
+def unknowndf1e4fe2(): # not payable
+  return unknowndf1e4fe2Address
+
+def unknowne484bc90(): # not payable
+  return unknowne484bc90
+
+def open(): # not payable
+  return bool(open)
+
+#
+#  Regular functions
+#
+
+def _fallback() payable: # default function
+  revert
+
+def renounceOwnership(): # not payable
+  if owner != caller:
+      revert with 0, 'Ownable: caller is not the owner'
+  log OwnershipTransferred(
+        address previousOwner=owner,
+        address newOwner=0)
+  owner = 0
+
+def setFeeAddr(address _param1): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 32
+  require _param1 == _param1
+  if owner != caller:
+      revert with 0, 'Ownable: caller is not the owner'
+  feeAddr = _param1
+  return 1
+
+def unknown6e1cf330(uint256 _param1): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 32
+  require _param1 == _param1
+  if owner != caller:
+      revert with 0, 'Ownable: caller is not the owner'
+  changeAmount = _param1
+  return 1
+
+def unknown1b4bb77f(uint256 _param1): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 32
+  require _param1 == _param1
+  if owner != caller:
+      revert with 0, 'Ownable: caller is not the owner'
+  unknown7787a4e3 = _param1
+  return 1
+
+def unknown54f8855c(uint256 _param1): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 32
+  require _param1 == _param1
+  if owner != caller:
+      revert with 0, 'Ownable: caller is not the owner'
+  unknown4754d7d3 = _param1
+  return 1
+
+def unknown58911c30(uint256 _param1): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 32
+  require _param1 == _param1
+  if owner != caller:
+      revert with 0, 'Ownable: caller is not the owner'
+  unknown1950833a = _param1
+  return 1
+
+def unknown9cdc9ade(uint256 _param1): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 32
+  require _param1 == _param1
+  if owner != caller:
+      revert with 0, 'Ownable: caller is not the owner'
+  unknowne484bc90 = _param1
+  return 1
+
+def unknownd689c0ed(uint256 _param1): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 32
+  require _param1 == _param1
+  if owner != caller:
+      revert with 0, 'Ownable: caller is not the owner'
+  unknown7c87d888 = _param1
+  return 1
+
+def setTokenAddr(address _tokenAddr): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 32
+  require _tokenAddr == _tokenAddr
+  if owner != caller:
+      revert with 0, 'Ownable: caller is not the owner'
+  tokenAddr = _tokenAddr
+  return 1
+
+def setOpen(bool _open): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 32
+  require _open == _open
+  if owner != caller:
+      revert with 0, 'Ownable: caller is not the owner'
+  open = uint8(_open)
+  return 1
+
+def unknowneabb5622(uint256 _param1): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 32
+  require _param1 == _param1 % 16777216
+  if owner != caller:
+      revert with 0, 'Ownable: caller is not the owner'
+  fee = _param1 % 16777216
+  return 1
+
+def unknownb9232d63(uint256 _param1): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 32
+  require _param1 == addr(_param1)
+  if owner != caller:
+      revert with 0, 'Ownable: caller is not the owner'
+  priceAddress = addr(_param1)
+  return 1
+
+def unknowne9b88f55(uint256 _param1): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 32
+  require _param1 == addr(_param1)
+  if owner != caller:
+      revert with 0, 'Ownable: caller is not the owner'
+  unknowndf1e4fe2Address = addr(_param1)
+  return 1
+
+def revokeAccess(address _address): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 32
+  require _address == _address
+  if owner != caller:
+      revert with 0, 'Ownable: caller is not the owner'
+  stor1[addr(_address)] = 0
+  log 0xdaa6f74a: 0, _address
+
+def grantAccess(address _v2Address): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 32
+  require _v2Address == _v2Address
+  if owner != caller:
+      revert with 0, 'Ownable: caller is not the owner'
+  stor1[addr(_v2Address)] = 1
+  log 0xdaa6f74a: 1, _v2Address
+
+def unknownb7ae600e(uint256 _param1): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 32
+  require _param1 == addr(_param1)
+  if owner != caller:
+      revert with 0, 'Ownable: caller is not the owner'
+  addr(unknownaf589da3Address) = addr(_param1)
+  return 1
+
+def unknownde7d69a8(uint256 _param1): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 32
+  require _param1 == addr(_param1)
+  if owner != caller:
+      revert with 0, 'Ownable: caller is not the owner'
+  addr(unknown1554e1ceAddress) = addr(_param1)
+  return 1
+
+def getCoin(uint256 _n): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 32
+  require _n == _n
+  if owner != caller:
+      revert with 0, 'Ownable: caller is not the owner'
+  call unknowndf1e4fe2Address with:
+     value _n wei
+       gas 2300 * is_zero(value) wei
+  if not ext_call.success:
+      revert with ext_call.return_data[0 len return_data.size]
+  return 1
+
+def unknown43c673c2(): # not payable
+  require ext_code.size(tokenAddr)
+  static call tokenAddr.balanceOf(address tokenOwner) with:
+          gas gas_remaining wei
+         args this.address
+  if not ext_call.success:
+      revert with ext_call.return_data[0 len return_data.size]
+  require return_data.size >=ΓÇ▓ 32
+  require ext_call.return_data == ext_call.return_data[0]
+  return ext_call.return_data[0]
+
+def transferOwnership(address _newOwner): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 32
+  require _newOwner == _newOwner
+  if owner != caller:
+      revert with 0, 'Ownable: caller is not the owner'
+  if not _newOwner:
+      revert with 0x8c379a000000000000000000000000000000000000000000000000000000000, 'Ownable: new owner is the zero address'
+  log OwnershipTransferred(
+        address previousOwner=owner,
+        address newOwner=_newOwner)
+  owner = _newOwner
+
+def getToken(uint256 _tokenId): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 32
+  require _tokenId == _tokenId
+  if owner != caller:
+      revert with 0, 'Ownable: caller is not the owner'
+  require ext_code.size(tokenAddr)
+  call tokenAddr.transfer(address to, uint256 tokens) with:
+       gas gas_remaining wei
+      args unknowndf1e4fe2Address, _tokenId
+  if not ext_call.success:
+      revert with ext_call.return_data[0 len return_data.size]
+  require return_data.size >=ΓÇ▓ 32
+  require ext_call.return_data == bool(ext_call.return_data[0])
+  return 1
+
+def unknown38f8cf20(uint256 _param1, uint256 _param2, uint256 _param3, uint256 _param4): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 128
+  require _param1 == addr(_param1)
+  require _param2 == _param2
+  require _param3 == addr(_param3)
+  require _param4 == _param4 % 16777216
+  require ext_code.size(priceAddress)
+  static call priceAddress.0xe9de5ee9 with:
+          gas gas_remaining wei
+         args 0, 0, _param2, addr(_param3), _param4 % 16777216
+  if not ext_call.success:
+      revert with ext_call.return_data[0 len return_data.size]
+  require return_data.size >=ΓÇ▓ 32
+  require ext_call.return_data == ext_call.return_data[0]
+  return ext_call.return_data[0]
+
+def unknown65f3db49(uint256 _param1): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 32
+  require _param1 == _param1
+  if _param1 and changeAmount > -1 / _param1:
+      revert with 'NH{q', 17
+  if not unknown1950833a:
+      revert with 'NH{q', 18
+  require ext_code.size(priceAddress)
+  static call priceAddress.0xe9de5ee9 with:
+          gas gas_remaining wei
+         args 0, uint32(stor9), _param1 * changeAmount / unknown1950833a / 10^12, addr(unknownaf589da3Address), fee
+  if not ext_call.success:
+      revert with ext_call.return_data[0 len return_data.size]
+  require return_data.size >=ΓÇ▓ 32
+  require ext_call.return_data == ext_call.return_data[0]
+  if unknown7787a4e3 <= 0:
+      if ext_call.return_data < 0:
+          revert with 'NH{q', 17
+      return ext_call.return_data[0]
+  if ext_call.return_data and unknown7787a4e3 > -1 / ext_call.return_data[0]:
+      revert with 'NH{q', 17
+  if ext_call.return_data < ext_call.return_data * unknown7787a4e3 / 100:
+      revert with 'NH{q', 17
+  return (ext_call.return_data * unknown7787a4e3 / 100))
+
+def unknownbb428db7(uint256 _param1): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 32
+  require _param1 == _param1
+  if unknown7c87d888 <= 0:
+      if _param1 < 0:
+          revert with 'NH{q', 17
+      require ext_code.size(priceAddress)
+      static call priceAddress.0xe9de5ee9 with:
+              gas gas_remaining wei
+             args 0, uint32(stor10), _param1, addr(unknown1554e1ceAddress), fee
+  else:
+      if _param1 and unknown7c87d888 > -1 / _param1:
+          revert with 'NH{q', 17
+      if _param1 < _param1 * unknown7c87d888 / 100:
+          revert with 'NH{q', 17
+      require ext_code.size(priceAddress)
+      static call priceAddress.0xe9de5ee9 with:
+              gas gas_remaining wei
+             args 0, uint32(stor10), _param1 - (_param1 * unknown7c87d888 / 100), addr(unknown1554e1ceAddress), fee
+  if not ext_call.success:
+      revert with ext_call.return_data[0 len return_data.size]
+  require return_data.size >=ΓÇ▓ 32
+  require ext_call.return_data == ext_call.return_data[0]
+  if ext_call.return_data and 10^12 > -1 / ext_call.return_data[0]:
+      revert with 'NH{q', 17
+  if 10^12 * ext_call.return_data and unknown1950833a > -1 / 10^12 * ext_call.return_data[0]:
+      revert with 'NH{q', 17
+  if not changeAmount:
+      revert with 'NH{q', 18
+  return (10^12 * ext_call.return_data * unknown1950833a / changeAmount)
+
+def unknown00fefa9b(uint256 _param1): # not payable
+  require calldata.size - 4 >=ΓÇ▓ 32
+  require _param1 == _param1
+  if not open:
+      revert with 0, 'no open'
+  if tx.origin != caller:
+      revert with 0, 'not allowed'
+  if _param1 > unknowne484bc90:
+      revert with 0, 'Wrong value'
+  if _param1 and changeAmount > -1 / _param1:
+      revert with 'NH{q', 17
+  if not unknown1950833a:
+      revert with 'NH{q', 18
+  require ext_code.size(priceAddress)
+  static call priceAddress.0xe9de5ee9 with:
+          gas gas_remaining wei
+         args 0, uint32(stor9), _param1 * changeAmount / unknown1950833a / 10^12, addr(unknownaf589da3Address), fee
+  if not ext_call.success:
+      revert with ext_call.return_data[0 len return_data.size]
+  require return_data.size >=ΓÇ▓ 32
+  require ext_call.return_data == ext_call.return_data[0]
+  if eth.balance(this.address) < ext_call.return_data[0]:
+      revert with 0, 'Wrong matic'
+  require ext_code.size(tokenAddr)
+  call tokenAddr.transferFrom(address from, address to, uint256 tokens) with:
+       gas gas_remaining wei
+      args caller, addr(this.address), _param1
+  if not ext_call.success:
+      revert with ext_call.return_data[0 len return_data.size]
+  require return_data.size >=ΓÇ▓ 32
+  require ext_call.return_data == bool(ext_call.return_data[0])
+  if unknown7787a4e3 <= 0:
+      if ext_call.return_data < 0:
+          revert with 'NH{q', 17
+      call caller with:
+         value ext_call.return_datawei
+           gas 2300 * is_zero(value) wei
+      if not ext_call.success:
+          revert with ext_call.return_data[0 len return_data.size]
+      log 0x1c38935c: caller, _param1, 0, ext_call.return_dataestamp
+  else:
+      if ext_call.return_data and unknown7787a4e3 > -1 / ext_call.return_data[0]:
+          revert with 'NH{q', 17
+      call feeAddr with:
+         value ext_call.return_data * unknown7787a4e3 / 100 wei
+           gas 2300 * is_zero(value) wei
+      if not ext_call.success:
+          revert with ext_call.return_data[0 len return_data.size]
+      if ext_call.return_data < ext_call.return_data * unknown7787a4e3 / 100:
+          revert with 'NH{q', 17
+      call caller with:
+         value ext_call.return_data * unknown7787a4e3 / 100) wei
+           gas 2300 * is_zero(value) wei
+      if not ext_call.success:
+          revert with ext_call.return_data[0 len return_data.size]
+      log 0x1c38935c: caller, _param1, ext_call.return_dataestamp
+  return 1
+
+def unknown8d69d05c() payable: 
+  if stor2 == 2:
+      revert with 0, 'ReentrancyGuard: reentrant call'
+  stor2 = 2
+  if not open:
+      revert with 0, 'no open'
+  if tx.origin != caller:
+      revert with 0, 'not allowed'
+  if call.value > unknown4754d7d3:
+      revert with 0, 'Wrong value'
+  if unknown7c87d888 <= 0:
+      if call.value < 0:
+          revert with 'NH{q', 17
+      require ext_code.size(priceAddress)
+      static call priceAddress.0xe9de5ee9 with:
+              gas gas_remaining wei
+             args 0, uint32(stor10), call.value, addr(unknown1554e1ceAddress), fee
+      if not ext_call.success:
+          revert with ext_call.return_data[0 len return_data.size]
+      require return_data.size >=ΓÇ▓ 32
+      require ext_call.return_data == ext_call.return_data[0]
+      if ext_call.return_data and 10^12 > -1 / ext_call.return_data[0]:
+          revert with 'NH{q', 17
+      if 10^12 * ext_call.return_data and unknown1950833a > -1 / 10^12 * ext_call.return_data[0]:
+          revert with 'NH{q', 17
+      if not changeAmount:
+          revert with 'NH{q', 18
+      require ext_code.size(tokenAddr)
+      static call tokenAddr.balanceOf(address tokenOwner) with:
+              gas gas_remaining wei
+             args this.address
+      if not ext_call.success:
+          revert with ext_call.return_data[0 len return_data.size]
+      require return_data.size >=ΓÇ▓ 32
+      require ext_call.return_data == ext_call.return_data[0]
+      if ext_call.return_data < 10^12 * ext_call.return_data * unknown1950833a / changeAmount:
+          revert with 0, 'Wrong token'
+      require ext_code.size(tokenAddr)
+      call tokenAddr.transfer(address to, uint256 tokens) with:
+           gas gas_remaining wei
+          args caller, 10^12 * ext_call.return_data * unknown1950833a / changeAmount
+      if not ext_call.success:
+          revert with ext_call.return_data[0 len return_data.size]
+      require return_data.size >=ΓÇ▓ 32
+      require ext_call.return_data == bool(ext_call.return_data[0])
+      log 0xcbff6e2a: caller, call.value, 0, 10^12 * ext_call.return_dataount, block.timestamp
+  else:
+      if call.value and unknown7c87d888 > -1 / call.value:
+          revert with 'NH{q', 17
+      if call.value < call.value * unknown7c87d888 / 100:
+          revert with 'NH{q', 17
+      require ext_code.size(priceAddress)
+      static call priceAddress.0xe9de5ee9 with:
+              gas gas_remaining wei
+             args 0, uint32(stor10), call.value - (call.value * unknown7c87d888 / 100), addr(unknown1554e1ceAddress), fee
+      if not ext_call.success:
+          revert with ext_call.return_data[0 len return_data.size]
+      require return_data.size >=ΓÇ▓ 32
+      require ext_call.return_data == ext_call.return_data[0]
+      if ext_call.return_data and 10^12 > -1 / ext_call.return_data[0]:
+          revert with 'NH{q', 17
+      if 10^12 * ext_call.return_data and unknown1950833a > -1 / 10^12 * ext_call.return_data[0]:
+          revert with 'NH{q', 17
+      if not changeAmount:
+          revert with 'NH{q', 18
+      require ext_code.size(tokenAddr)
+      static call tokenAddr.balanceOf(address tokenOwner) with:
+              gas gas_remaining wei
+             args this.address
+      if not ext_call.success:
+          revert with ext_call.return_data[0 len return_data.size]
+      require return_data.size >=ΓÇ▓ 32
+      require ext_call.return_data == ext_call.return_data[0]
+      if ext_call.return_data < 10^12 * ext_call.return_data * unknown1950833a / changeAmount:
+          revert with 0, 'Wrong token'
+      if call.value * unknown7c87d888 / 100 > 0:
+          call feeAddr with:
+             value call.value * unknown7c87d888 / 100 wei
+               gas 2300 * is_zero(value) wei
+          if not ext_call.success:
+              revert with ext_call.return_data[0 len return_data.size]
+      require ext_code.size(tokenAddr)
+      call tokenAddr.transfer(address to, uint256 tokens) with:
+           gas gas_remaining wei
+          args caller, 10^12 * ext_call.return_data * unknown1950833a / changeAmount
+      if not ext_call.success:
+          revert with ext_call.return_data[0 len return_data.size]
+      require return_data.size >=ΓÇ▓ 32
+      require ext_call.return_data == bool(ext_call.return_data[0])
+      log 0xcbff6e2a: caller, call.value, call.value * unknown7c87d888 / 100, 10^12 * ext_call.return_dataount, block.timestamp
+  stor2 = 1
+  return 1
+
+
